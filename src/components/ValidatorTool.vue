@@ -5,7 +5,7 @@
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
           <h1>Validator tool</h1>
-          <div id="reader" width="400px"></div>
+          <!--<div id="reader" width="400px"></div>-->
           <input type="text" placeholder="commitment" v-model="commitment" />
           <input type="text" placeholder="unique hash" v-model="uniqueHash" />
           <button class="btn btn-info" @click="sendToBlockchain">
@@ -28,21 +28,21 @@ export default class ValidatorTool extends Vue {
   public commitment = "";
   public uniqueHash = "";
 
-  mounted() {
-    let html5QrcodeScanner = new Html5QrcodeScanner(
-      "reader",
-      { fps: 10, qrbox: { width: 400, height: 400 } },
-      false
-    );
-    html5QrcodeScanner.render(
-      (decodedText, decodedResult) => {
-        this.commitment = decodedText;
-      },
-      (error) => {
-        // console.log(error);
-      }
-    );
-  }
+  // mounted() {
+  //   let html5QrcodeScanner = new Html5QrcodeScanner(
+  //     "reader",
+  //     { fps: 10, qrbox: { width: 400, height: 400 } },
+  //     false
+  //   );
+  //   html5QrcodeScanner.render(
+  //     (decodedText, decodedResult) => {
+  //       this.commitment = decodedText;
+  //     },
+  //     (error) => {
+  //       // console.log(error);
+  //     }
+  //   );
+  // }
 
   async sendToBlockchain() {
     const abi = [

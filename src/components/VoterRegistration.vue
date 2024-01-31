@@ -5,7 +5,7 @@
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
           <h1>Your commitment</h1>
-          <img :src="qrcodeDataUrl" />
+          <!--<img :src="qrcodeDataUrl" />-->
           <div
             v-if="commitment"
             v-html="splitTwoLines(commitment.commitment)"
@@ -49,7 +49,7 @@ export default class VoterRegistration extends Vue {
         JSON.stringify(this.commitment)
       );
     }
-    this.qrcodeDataUrl = await QRCode.toDataURL(this.commitment.commitment);
+    // this.qrcodeDataUrl = await QRCode.toDataURL(this.commitment.commitment);
   }
 
   splitTwoLines(text: string) {
